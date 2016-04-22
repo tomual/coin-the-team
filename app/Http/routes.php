@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/','PageController@index');
 
 Route::get('posts', 'PostController@index' );
