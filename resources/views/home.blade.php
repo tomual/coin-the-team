@@ -56,12 +56,13 @@
             <h2>Blog</h2>
         </div>
         <div class="col-md-6">
-            <img src="img/stephaniekawaii.png">
+            <img src="{{ $posts[0]->image }}">
+            <!-- <img src="img/stephaniekawaii.png"> -->
         </div>
         <div class="col-md-6">
         @if($posts->count())
-            <h1>{{ $posts->find(1)->title }}</h1>
-            <p>{{ $posts->find(1)->body }} <a href="https://www.facebook.com/events/575517239265968/" target="_blank">More Information</a></p>
+            <h1>{{ $posts[0]->title }}</h1>
+            <p>{{ $posts[0]->body }} <a href="{{ $posts[0]->redirect }}" target="_blank">More Information</a></p>
         @endif
         </div>
     </div>
@@ -72,20 +73,26 @@
         </div>
         <div class="col-md-4 post-preview">
         	@if($posts->count() > 1)
-            <img src="http://dhost1.mmomiss.com/uploads/201509/4eec6099c0beb9063c13be929ea4114a.jpg">
-            <h2>{{ $posts->find(2)->title }}</h2>
+            <!-- <img src="http://dhost1.mmomiss.com/uploads/201509/4eec6099c0beb9063c13be929ea4114a.jpg"> -->
+            <img src="{{ $posts[1]->image }}">
+            <h2>{{ $posts[1]->title }}</h2>
+            <p>{{ $posts[0]->body }} <a href="{{ $posts[0]->redirect }}" target="_blank">More Information</a></p>
         	@endif
         </div>
         <div class="col-md-4 post-preview">
         	@if($posts->count() > 2)
-            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSDMU8-TVOaxiqIMdsocy_QUrzjR3ZifUPinpLKq9FuPVKgmqil">
-            <h2>{{ $posts->find(3)->title }}</h2>
+            <!-- <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSDMU8-TVOaxiqIMdsocy_QUrzjR3ZifUPinpLKq9FuPVKgmqil"> -->
+            <img src="{{ $posts[2]->image }}">
+            <h2>{{ $posts[2]->title }}</h2>
+            <p>{{ $posts[0]->body }} <a href="{{ $posts[0]->redirect }}" target="_blank">More Information</a></p>
         	@endif
         </div>
         <div class="col-md-4 post-preview">
         	@if($posts->count() > 3)
-            <img src="https://i.ytimg.com/vi/dKVEWn_X0pA/maxresdefault.jpg">
-            <h2>{{ $posts->find(4)->title }}</h2>
+            <!-- <img src="https://i.ytimg.com/vi/dKVEWn_X0pA/maxresdefault.jpg"> -->
+            <img src="{{ $posts[3]->image }}">
+            <h2>{{ $posts[3]->title }}</h2>
+            <p>{{ $posts[0]->body }} <a href="{{ $posts[0]->redirect }}" target="_blank">More Information</a></p>
         	@endif
         </div>
     </div>

@@ -32,7 +32,8 @@ Route::post('post',  function (Request $request) {
 });
 
 Route::delete('/post/{post}', function (Post $post) {
-
+	$post->delete();
+    return redirect('/posts');
 });
 
 
