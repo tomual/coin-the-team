@@ -122,3 +122,26 @@ p a {
 -webkit-filter: grayscale(100%);
 	filter: grayscale(100%);;
 }
+
+.posts .post {
+	margin: 40px 0;
+}
+
+.posts .post .body {
+	margin: 20px 0;
+}
+
+.posts {
+	padding: 90px 0;
+}
+
+.posts .image {
+	margin: 20px 0;
+	width: 50%;
+}
+
+.posts .author,
+.posts .link,
+.posts .date {
+	display: inline;
+}

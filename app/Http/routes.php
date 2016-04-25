@@ -16,7 +16,7 @@ Route::post('post',  function (Request $request) {
     ]);
 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/post')
             ->withInput()
             ->withErrors($validator);
     }
@@ -28,7 +28,7 @@ Route::post('post',  function (Request $request) {
     $post->image = $request->image;
     $post->save();
 
-    return redirect('post');
+    return redirect('posts');
 });
 
 Route::delete('/post/{post}', function (Post $post) {
