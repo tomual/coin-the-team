@@ -7,29 +7,11 @@ Route::get('/','PageController@index');
 
 Route::get('post','PostController@index');
 
-Route::get('posts', 'PostController@posts' );
+Route::get('posts', 'PostController@posts');
 
-Route::post('post',  function (Request $request) {
-	$validator = Validator::make($request->all(), [
-        'title' => 'required|max:255',
-        'body' => 'required|max:255',
-    ]);
+Route::post('post', 'PostController@create');
 
-    if ($validator->fails()) {
-        return redirect('/post')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $post = new Post;
-    $post->title = $request->title;
-    $post->body = $request->body;
-    $post->redirect = $request->redirect;
-    $post->image = $request->image;
-    $post->save();
-
-    return redirect('posts');
-});
+Route::get('/post/{post}', 'PostController@view');
 
 Route::delete('/post/{post}', function (Post $post) {
 	$post->delete();
