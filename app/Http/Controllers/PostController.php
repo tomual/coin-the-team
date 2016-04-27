@@ -37,12 +37,12 @@ class PostController extends Controller
                 ->withErrors($validator);
         }
 
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->redirect = $request->redirect;
-        $post->image = $request->image;
-        $post->save();
+        $request->user()->posts()->create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'redirect' => $request->redirect,
+            'image' => $request->image,
+        ]);
 
         return redirect('posts');
 	}

@@ -13,13 +13,19 @@ class CreateGroupsTable extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->increments('group_id');
+            $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
         Schema::table('users', function ($table) {
-            $table->foreign('group_id')->references('group_id')->on('groups');
+            $table->foreign('group_id')->references('id')->on('groups');
         });
+        DB::table('groups')->insert(
+            array(
+                'id' => '1',
+                'name' => 'Unassigned'
+            )
+        );
     }
 
     /**

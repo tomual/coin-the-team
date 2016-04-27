@@ -44,13 +44,13 @@
         </div>
         @for ($i = 1; $i <= 3; $i++)
         <div class="col-md-4 post-preview">
-        	@if($posts->count() > $i)
+            @if($posts->count() > $i)
             <!-- <img src="http://dhost1.mmomiss.com/uploads/201509/4eec6099c0beb9063c13be929ea4114a.jpg"> -->
             <img src="{{ $posts[$i]->image }}">
             <h2>{{ $posts[$i]->title }}</h2>
             <div class="post-date">{{ $posts[$i]->created_at->format('dS F Y') }}</div>
             <p>{{ $posts[$i]->body }} <a href="{{ $posts[$i]->redirect }}" target="_blank">More Information</a></p>
-        	@endif
+            @endif
         </div>
         @endfor
     </div>
