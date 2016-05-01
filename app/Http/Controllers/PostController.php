@@ -9,6 +9,14 @@ use App\Http\Requests;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => [
+            'posts',
+            'view'
+        ]]);
+    }
+
     public function index()
     {
     	return view('posts.new');
@@ -54,4 +62,10 @@ class PostController extends Controller
 
         return redirect('posts');
 	}
+
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect('/posts');
+    }
 }

@@ -13,10 +13,7 @@ Route::post('post', 'PostController@create');
 
 Route::get('/post/{post}', 'PostController@view');
 
-Route::delete('/post/{post}', function (Post $post) {
-	$post->delete();
-    return redirect('/posts');
-});
+Route::delete('/post/{post}', 'PostController@delete');
 
 Route::auth();
 

@@ -35,7 +35,7 @@
 
         <hr>
         <footer>
-            <p>&copy; Damage Per Second Gaming 2016</p>
+            <p>&copy; Damage Per Second Gaming 2016 <a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i></a></p>
         </footer>
     </div>
 

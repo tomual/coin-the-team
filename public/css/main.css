@@ -20,7 +20,7 @@ body {
 	background-image: url("/img/jumbotron.png");
     background-size: 700px;
 	height: 750px;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     background-position: 50%;
 }
 .header.page {
@@ -72,6 +72,10 @@ footer {
 	opacity: 0.5;
 	text-align: center;
 	padding: 50px 0;
+}
+
+footer .fa {
+	color: #9294A5;
 }
 
 .btn-primary {
