@@ -1,4 +1,8 @@
-@extends('layout')
+@extends('layout.page')
+
+@section('title')
+    Posts
+@stop
 
 @section('content')
 <div class="row posts">
@@ -6,8 +10,8 @@
 		<a href="/post" class="btn btn-primary">New Post</a>
 	    @foreach($posts as $post)
 	    	<div class="post">
-		    	<h1>{{ $post->title }}</h1>
 		    	<div class="image"><img src="{{ $post->image }}"></div>
+		    	<h2>{{ $post->title }}</h2>
 		    	<div class="author">By {{ $post->uid }}</div> @ 
 		    	<div class="date">{{ $post->created_at->format('dS M Y h:ma')  }}</div> - 
 		    	<div class="link"><a href="{{ $post->redirect }}">Link</a></div>

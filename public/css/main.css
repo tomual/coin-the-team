@@ -20,8 +20,35 @@ body {
 	background-image: url("/img/jumbotron.png");
     background-size: 700px;
 	height: 750px;
-    background-repeat: no-repeat;
-    background-position: 50% 60%; 
+    background-repeat: no-repeat;    
+    background-position: 50%;
+}
+.header.page {
+    height: 300px;
+    background-position-y: 100%;
+}
+.header.page .logo {
+    background-size: 150px;
+    height: 150px;
+}
+
+.header.page .nav ul li {
+    margin: 0px 30px;
+    width: 100px;
+    display: inline-block;
+}
+
+.header.page .nav ul li:nth-child(2) {
+	margin-right: 90px;
+}
+
+.header.page .nav ul li:nth-child(3) {
+	margin-left: 90px;
+}
+
+.header h1 {
+    text-align: center;
+    margin-top: 100px;
 }
 
 h1, h2, h3 {
@@ -43,6 +70,8 @@ footer {
 	font-size: 14px;
 	font-weight: 300;
 	opacity: 0.5;
+	text-align: center;
+	padding: 50px 0;
 }
 
 .fa {
@@ -99,6 +128,7 @@ p a {
 
 .nav ul {
 	list-style-type: none;
+	padding: 0;
 	padding-top: 40px;
 }
 
@@ -135,13 +165,13 @@ p a {
 	padding: 90px 0;
 }
 
-.posts .image {
-	margin: 20px 0;
-	width: 50%;
-}
-
 .posts .author,
 .posts .link,
 .posts .date {
 	display: inline;
+}
+
+.post img {
+	display: block;
+	margin: 40px auto;
 }

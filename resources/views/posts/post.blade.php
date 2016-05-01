@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.page')
 
 @section('content')
     <h1>{{ $post->title }}</h1>
