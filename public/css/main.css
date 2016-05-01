@@ -74,8 +74,21 @@ footer {
 	padding: 50px 0;
 }
 
+.btn-primary {
+	background-color: #00AEEF;
+}
+
 .fa {
 	color: #00AEEF;
+}
+
+.btn .fa {
+	color: #FFF;
+	margin-right: 10px;
+}
+
+.input-group .fa {
+	color: #000;
 }
 
 .intro {
@@ -144,15 +157,6 @@ p a {
 	margin: 40px 0;
 }
 
-.post-preview h2 {
-	color: #9294A5;
-}
-
-.post-preview img {
--webkit-filter: grayscale(100%);
-	filter: grayscale(100%);;
-}
-
 .posts .post {
 	margin: 40px 0;
 }
@@ -174,4 +178,16 @@ p a {
 .post img {
 	display: block;
 	margin: 40px auto;
+}
+
+#new-post {
+	margin-top: 50px;
+}
+
+.home {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
 }

@@ -16,6 +16,7 @@
     <body>
     <div class="header page">
         <div class="logo">
+            <a href="/"><div class="home"></div></a>
             <div class="container">
                 <div class="row nav">
                     <ul>
@@ -36,6 +37,8 @@
 
         @yield('content')
 
+    </div>
+    <div class="container">
         <hr>
         <footer>
             <p>&copy; Damage Per Second Gaming 2016</p>

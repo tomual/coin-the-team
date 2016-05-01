@@ -13,8 +13,8 @@ class AddRedirectAndImageColumn extends Migration
     public function up()
     {
         Schema::table('posts', function ($table) {
-            $table->string('redirect')->nullable();
-            $table->string('image')->nullable();
+            $table->string('redirect');
+            $table->string('image');
         });
     }
 

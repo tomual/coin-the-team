@@ -37,6 +37,14 @@ class PostController extends Controller
                 ->withErrors($validator);
         }
 
+        if( empty($request->redirect) ) {
+            $request->redirect = 'https://www.facebook.com/DamagePerSecongGaming';
+        }
+
+        if( empty($request->image) ) {
+            $request->image = '/img/default.png';
+        }
+
         $request->user()->posts()->create([
             'title' => $request->title,
             'body' => $request->body,
