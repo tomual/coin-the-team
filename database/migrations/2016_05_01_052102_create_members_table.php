@@ -15,9 +15,10 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
-            $table->string('description');
+            $table->string('position');
+            $table->date('joined');
             $table->integer('group_id')->unsigned()->default(1);
-            $table->string('image')->nullable()->default('/img/default.png');
+            $table->string('image');
             $table->timestamps();
         });
         Schema::table('members', function ($table) {

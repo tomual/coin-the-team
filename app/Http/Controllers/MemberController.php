@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Validator;
 use App\Member;
 use App\Http\Requests;
 
@@ -43,19 +43,24 @@ class MemberController extends Controller
                 ->withErrors($validator);
         }
 
-        $request->user()->members()->create([
-            'username' => $request->username,
-            'description' => $request->description,
-            'group_id' => $request->group_id,
-            'image' => $request->image,
-        ]);
+        if( empty($request->image) ) {
+            $request->image = 'http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg';
+        }
 
-        return redirect('members');
+        $task = new Member;
+        $task->username = $request->username;
+        $task->position = $request->position;
+        $task->group_id = $request->group_id;
+        $task->joined = $request->joined;
+        $task->image = $request->image;
+        $task->save();
+
+        return redirect('team');
 	}
 
     public function delete(Member $member)
     {
         $member->delete();
-        return redirect('/members');
+        return redirect('/team');
     }
 }

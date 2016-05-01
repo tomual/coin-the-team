@@ -19,10 +19,10 @@
             <div class="container">
                 <div class="row nav">
                     <ul>
-                        <li><a href="/">Posts</a></li>
-                        <li><a href="/posts">Team</a></li>
-                        <li>Shirt</li>
-                        <li>Contact</li>
+                        <li><a href="/posts">Posts</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/shirt">Shirt</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>

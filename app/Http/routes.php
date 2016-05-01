@@ -16,7 +16,7 @@ Route::delete('/post/{post}', 'PostController@delete');
 
 // Members
 Route::get('member','MemberController@index');
-Route::get('members', 'MemberController@members');
+Route::get('team', 'MemberController@members');
 Route::post('member', 'MemberController@create');
 Route::get('/member/{member}', 'MemberController@view');
 Route::delete('/member/{member}', 'MemberController@delete');

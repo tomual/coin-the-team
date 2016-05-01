@@ -13,7 +13,6 @@ class AddGroupColumnToUsers extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
-            $table->integer('group_id')->unsigned()->default(1);
             $table->string('username');
         });
     }
@@ -26,7 +25,6 @@ class AddGroupColumnToUsers extends Migration
     public function down()
     {
         Schema::table('users', function ($table) {
-            $table->dropColumn('group_id');
             $table->dropColumn('username');
         });
     }

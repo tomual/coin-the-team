@@ -17,15 +17,6 @@ class CreateGroupsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        Schema::table('users', function ($table) {
-            $table->foreign('group_id')->references('id')->on('groups');
-        });
-        DB::table('groups')->insert(
-            array(
-                'id' => '1',
-                'name' => 'Unassigned'
-            )
-        );
     }
 
     /**
@@ -35,9 +26,6 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
-            $table->dropForeign('users_group_id_foreign');
-        });
         Schema::drop('groups');
     }
 }

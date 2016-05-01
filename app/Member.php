@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    protected $fillable = ['title', 'body', 'redirect', 'image'];
+	protected $fillable = ['username', 'position', 'group_id', 'image', 'joined'];
 }
