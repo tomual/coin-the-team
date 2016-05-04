@@ -195,3 +195,46 @@ p a {
 	left: 50%;
 	margin-left: -75px;
 }
+
+.member {
+	height: 100px;
+    margin: 40px 0;
+}
+
+.member .image {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.member .image img {
+	vertical-align: initial;
+}
+
+.member .member-text {
+	display: inline-block;
+    height: 120px;
+    width: 100%;
+    margin-left: 120px;
+}
+
+.member .username {
+	font-family: 'Open Sans Condensed', sans-serif;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.member .joined {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.members h2 {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #00AEEF;
+    padding-bottom: 20px;
+}
