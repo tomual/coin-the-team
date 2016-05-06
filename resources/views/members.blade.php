@@ -5,14 +5,14 @@
 @stop
 
 @section('content')
-<div class="row members" data-spy="scroll" data-target=".teams" data-offset="50">
-    <nav class="col-sm-3" id="teams">
-        <ul class="">
-            <li><a href="#staff">Staff</a></li>
-            <li><a href="#league-of-legends-a">League of Legends A</a></li>
-            <li><a href="#league-of-legends-b">League of Legends B</a></li>
-            <li><a href="#call-of-duty">Call of Duty</a></li>
-            <li><a href="#super-smash-bros">Super Smash Bros</a></li>
+<div class="row members" >
+    <nav class="col-md-3" id="teams">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="nav-item"><a class="nav-link" href="#staff">Staff</a></li>
+            <li class="nav-item"><a class="nav-link" href="#league-of-legends-a">League of Legends A</a></li>
+            <li class="nav-item"><a class="nav-link" href="#league-of-legends-b">League of Legends B</a></li>
+            <li class="nav-item"><a class="nav-link" href="#call-of-duty">Call of Duty</a></li>
+            <li class="nav-item"><a class="nav-link" href="#super-smash-bros">Super Smash Bros</a></li>
         </ul>
     </nav>
     <div class="col-md-8 col-md-offset-4">
@@ -20,7 +20,7 @@
         <a href="/member" class="btn btn-primary"><i class="fa fa-file-o" aria-hidden="true"></i>New Member</a>
         @endif
 
-        <a id="staff"></a>
+        <div id="staff">
         <h2>Staff</h2>
         <div class="member">
             <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
@@ -46,9 +46,9 @@
                 <div class="joined">Joined Jun 2016</div>
             </div>
         </div>
+        </div>
 
-
-        <a id="league-of-legends-a"></a>
+        <div id="league-of-legends-a">
         <h2>League of Legends A</h2>        
         <div class="member">
             <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
@@ -90,10 +90,10 @@
                 <div class="joined">Joined Jun 2016</div>
             </div>
         </div>
+        </div>
 
 
-
-        <a id="league-of-legends-b"></a>
+        <div id="league-of-legends-b">
         <h2>League of Legends B</h2>
         <div class="member">
             <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
@@ -135,9 +135,9 @@
                 <div class="joined">Joined Jun 2016</div>
             </div>
         </div>
+        </div>
 
-
-        <a id="call-of-duty"></a>
+        <div id="call-of-duty">
         <h2>Call of Duty</h2>
         <div class="member">
             <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
@@ -171,9 +171,9 @@
                 <div class="joined">Joined Jun 2016</div>
             </div>
         </div>
+        </div>
 
-
-        <a id="super-smash-bros"></a>
+        <div id="super-smash-bros">
         <h2>Super Smash Brothers</h2>
         <div class="member">
             <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
@@ -198,6 +198,7 @@
                 <div class="position">Co-founder. Likes computers and stuff.</div>
                 <div class="joined">Joined Jun 2016</div>
             </div>
+        </div>
         </div>
     </div>
 </div>

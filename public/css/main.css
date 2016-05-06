@@ -10,6 +10,7 @@ body {
 	font-size: 16px;
 	padding: 0;
 	margin: 0;
+	position: relative;
 }
 
 .header {
@@ -237,4 +238,13 @@ p a {
     margin-bottom: 50px;
     border-bottom: 1px solid #00AEEF;
     padding-bottom: 20px;
+}
+
+#teams {
+	position: fixed;
+	margin-top: 40px;
+}
+
+#teams .nav {
+	text-align: right;	
 }
