@@ -234,17 +234,31 @@ p a {
 }
 
 .members h2 {
-    margin-top: 90px;
     margin-bottom: 50px;
-    border-bottom: 1px solid #00AEEF;
     padding-bottom: 20px;
 }
 
 #teams {
 	position: fixed;
-	margin-top: 40px;
+	margin-top: 80px;
 }
 
 #teams .nav {
-	text-align: right;	
+	text-align: right;
+}
+
+#teams .nav-link {
+	color: #9294A5;
+	border-radius: 0;
+    border-right: 2px solid transparent;
+}
+
+#teams .nav-link.active {
+	color: #FFF;
+    background-color: initial;
+    border-right: 2px solid #00AEEF;
+}
+
+.team {
+    padding-top: 90px;
 }
