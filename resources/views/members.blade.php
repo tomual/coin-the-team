@@ -8,214 +8,34 @@
 <div class="row teams">
     <nav class="col-md-2" id="teams">
         <ul class="nav nav-pills nav-stacked">
-            <li class="nav-item"><a class="nav-link active" href="#staff">Staff</a></li>
-            <li class="nav-item"><a class="nav-link" href="#league-of-legends-a">League of Legends A</a></li>
-            <li class="nav-item"><a class="nav-link" href="#league-of-legends-b">League of Legends B</a></li>
-            <li class="nav-item"><a class="nav-link" href="#csgo">CS:GO</a></li>
-            <li class="nav-item"><a class="nav-link" href="#super-smash-bros">Super Smash Bros</a></li>
+            @foreach($teams as $team)
+                <li class="nav-item"><a class="nav-link" href="#{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}">{{ $team->name }}</a></li>
+            @endforeach
         </ul>
+        @if( Auth::check() )
+            <a href="/member" class="btn btn-primary add-member"><i class="fa fa-user" aria-hidden="true"></i>New Member</a>
+            <a href="/team" class="btn btn-primary add-team"><i class="fa fa-users" aria-hidden="true"></i>New Team</a>
+        @endif
     </nav>
     <div class="col-md-8 col-md-offset-4 members" data-spy="scroll" data-target="#teams" data-offset="200">
-        @if( Auth::check() )
-        <a href="/member" class="btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>New Member</a>
-        @endif
 
-        <div id="staff" class="team">
-        <h2>Staff</h2>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
+        @foreach($teams as $team)
+            <div id="{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}" class="team">
+            <h2>{{ $team->name }}</h2>
+            @foreach($members as $member)
+                @if($member->group_id == $team->id)
+                    <div class="member">
+                        <div class="image"><img src="{{ $member->image }}"></div>
+                        <div class="member-text">
+                            <div class="username">{{ $member->username }}</div>
+                            <div class="position">{{ $member->position }}</div>
+                            <div class="joined">Joined {{ $member->joined }}</div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
             </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        </div>
-
-        <div id="league-of-legends-a" class="team">
-        <h2>League of Legends A</h2>        
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        </div>
-
-
-        <div id="league-of-legends-b" class="team">
-        <h2>League of Legends B</h2>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        </div>
-
-        <div id="csgo" class="team">
-        <h2>CS:GO</h2>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        </div>
-
-        <div id="super-smash-bros" class="team">
-        <h2>Super Smash Brothers</h2>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        <div class="member">
-            <div class="image"><img src="http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg"></div>
-            <div class="member-text">
-                <div class="username">DPSGroundz</div>
-                <div class="position">Co-founder. Likes computers and stuff.</div>
-                <div class="joined">Joined Jun 2016</div>
-            </div>
-        </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @stop

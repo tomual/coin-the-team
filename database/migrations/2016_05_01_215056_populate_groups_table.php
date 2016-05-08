@@ -13,10 +13,9 @@ class PopulateGroupsTable extends Migration
     public function up()
     {
         DB::table('groups')->insert([
-            array('id' => '1', 'name' => 'Unassigned'),
-            array('id' => '2', 'name' => 'Staff'),
-            array('id' => '3', 'name' => 'League of Legends A'),
-            array('id' => '4', 'name' => 'League of Legends B'),
+            array('id' => '1', 'name' => 'Staff'),
+            array('id' => '2', 'name' => 'League of Legends A'),
+            array('id' => '3', 'name' => 'League of Legends B'),
         ]);
     }
 

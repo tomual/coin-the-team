@@ -1,11 +1,11 @@
 @extends('layout.page')
 
 @section('title')
-    New Post
+    New Member
 @stop
 
 @section('content')
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2 new-form">
         @include('errors')
 
         <form action="{{ url('member') }}" method="POST" class="form-horizontal" id="new-member">
@@ -18,7 +18,11 @@
 
             <div class="form-group">
                 <label for="task" class="control-label">Team</label>
-                <input type="text" name="group_id" id="group_id" class="form-control">
+                <select class="form-control" name="group_id" id="group_id">
+                    @foreach($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
@@ -27,8 +31,8 @@
             </div>
 
             <div class="form-group">
-                <label for="task" class="control-label">Joined</label>
-                <input type="text" name="joined" id="joined" class="form-control">
+                <label for="task" class="control-label">Joined (m/d/y)</label>
+                <input type="text" name="joined" id="joined" class="form-control" value="{{ date('m/d/Y') }}">
             </div>
 
             <div class="form-group">
@@ -41,7 +45,7 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Add</button>
-                <a href="/team" class="btn btn-secondary">Cancel</a>
+                <a href="/teams" class="btn btn-secondary">Cancel</a>
             </div>
         </form>
     </div>

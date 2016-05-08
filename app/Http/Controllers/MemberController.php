@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Member;
+use App\Group;
 use App\Http\Requests;
 
 class MemberController extends Controller
@@ -19,13 +20,20 @@ class MemberController extends Controller
 
     public function index()
     {
-    	return view('members.new');
+        $teams = Group::all();
+    	return view('members.new', compact( 'teams' ));
     }
 
     public function members()
     {
         $members = Member::orderBy('created_at', 'desc')->get();
-        return view('members', compact('members'));
+        $teams = Group::all();
+        return view('members', compact('members', 'teams'));
+    }
+
+    public function nate()
+    {
+        return view('members-demo');
     }
 
     public function view(Member $member)
@@ -35,6 +43,10 @@ class MemberController extends Controller
 
     public function create(Request $request) {
         $validator = Validator::make($request->all(), [
+            'username' => 'required|max:255',
+            'group_id' => 'required',
+            'position' => 'required',
+            'joined' => 'required',
         ]);
 
         if ($validator->fails()) {

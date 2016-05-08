@@ -262,3 +262,16 @@ p a {
 .team {
     padding-top: 90px;
 }
+
+#teams {
+	text-align: right;
+}
+
+#teams .btn {
+	margin-top: 20px;
+	width: 160px;
+}
+
+.new-form {
+	margin-top: 50px;
+}

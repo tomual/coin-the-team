@@ -20,8 +20,8 @@
             <div class="container">
                 <div class="row nav">
                     <ul>
-                        <li><a href="/posts">Posts</a></li>
-                        <li><a href="/team">Team</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/teams">Team</a></li>
                         <li><a href="/shirt">Shirt</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
