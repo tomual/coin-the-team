@@ -40,6 +40,6 @@ class GroupController extends Controller
     public function delete(Group $group)
     {
         $group->delete();
-        return redirect('team');
+        return redirect('teams');
     }
 }

@@ -9,7 +9,17 @@
     <nav class="col-md-2" id="teams">
         <ul class="nav nav-pills nav-stacked">
             @foreach($teams as $team)
-                <li class="nav-item"><a class="nav-link" href="#{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}">{{ $team->name }}</a></li>
+                <li class="nav-item">
+                @if( Auth::check() )            
+                    <form action="{{ url('team/' . $team->id) }}" method="POST">
+                        {!! csrf_field() !!}
+                        {!! method_field('DELETE') !!}
+                        <!-- <a href="/team/edit/{{ $team->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
+                        <button type="submit" class="delete-team"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    </form>
+                @endif
+                <a class="nav-link" href="#{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}">{{ $team->name }}</a>
+                </li>
             @endforeach
         </ul>
         @if( Auth::check() )
@@ -30,6 +40,15 @@
                             <div class="username">{{ $member->username }}</div>
                             <div class="position">{{ $member->position }}</div>
                             <div class="joined">Joined {{ $member->joined }}</div>
+
+                            @if( Auth::check() )            
+                                <form action="{{ url('member/' . $member->id) }}" method="POST">
+                                    {!! csrf_field() !!}
+                                    {!! method_field('DELETE') !!}
+                                    <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
+                                    <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                </form>
+                            @endif
                         </div>
                     </div>
                 @endif

@@ -67,12 +67,12 @@ class MemberController extends Controller
         $task->image = $request->image;
         $task->save();
 
-        return redirect('team');
+        return redirect('teams');
 	}
 
     public function delete(Member $member)
     {
         $member->delete();
-        return redirect('/team');
+        return redirect('teams');
     }
 }
