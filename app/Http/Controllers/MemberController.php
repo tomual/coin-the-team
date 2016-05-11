@@ -63,7 +63,7 @@ class MemberController extends Controller
         $task->username = $request->username;
         $task->position = $request->position;
         $task->group_id = $request->group_id;
-        $task->joined = $request->joined;
+        $task->joined = date("Y-m-d H:i:s", strtotime($request->joined));
         $task->image = $request->image;
         $task->save();
 

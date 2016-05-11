@@ -39,7 +39,7 @@
                         <div class="member-text">
                             <div class="username">{{ $member->username }}</div>
                             <div class="position">{{ $member->position }}</div>
-                            <div class="joined">Joined {{ $member->joined }}</div>
+                            <div class="joined">Joined {{ date("M Y", strtotime($member->joined)) }}</div>
 
                             @if( Auth::check() )            
                                 <form action="{{ url('member/' . $member->id) }}" method="POST">
