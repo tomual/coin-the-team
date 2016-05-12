@@ -14,4 +14,9 @@ class PageController extends Controller
     	$posts = Post::orderBy('created_at', 'desc')->get();
     	return view('home', compact('posts'));
     }
+
+    public function apparel()
+    {
+    	return view('apparel');
+    }
 }
