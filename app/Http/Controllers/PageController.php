@@ -19,4 +19,14 @@ class PageController extends Controller
     {
     	return view('apparel');
     }
+
+    public function contact()
+    {
+    	return view('contact');
+    }
+
+    public function submitContact(Request $request)
+    {
+    	dd($request->all());
+    }
 }

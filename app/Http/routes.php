@@ -29,3 +29,6 @@ Route::delete('/team/{group}', 'GroupController@delete');
 
 //Apparel
 Route::get('apparel','PageController@apparel');
+Route::get('contact','PageController@contact');
+Route::post('contact','PageController@submitContact');
+
