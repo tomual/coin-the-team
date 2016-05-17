@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Mail;
 use App\Post;
 use App\Http\Requests;
 
@@ -27,6 +27,11 @@ class PageController extends Controller
 
     public function submitContact(Request $request)
     {
-    	dd($request->all());
+    	//dd($request->all());
+        $data = $request->all();
+        Mail::send('email', $data, function ($message) {
+            $message->from($data->email, $data->name);
+            $message->to('contact@dpsgaming.org');
+        });
     }
 }
