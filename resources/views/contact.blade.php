@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="col-md-6 col-md-offset-3 new-form">
-        <p>Feel free to ask any questions or request membership using the contact form below. We will email you back within 24 hours.</p>
         @include('errors')
 
         <form action="{{ url('contact') }}" method="POST" id="contact">
