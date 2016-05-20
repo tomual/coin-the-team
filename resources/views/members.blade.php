@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="row teams">
-    <nav class="col-md-2" id="teams">
-        <ul class="nav nav-pills nav-stacked">
+    <nav id="teams">
+        <ul class="nav nav-pills nav-stacked hidden-sm-down">
             @foreach($teams as $team)
                 <li class="nav-item">
                 @if( Auth::check() )            
@@ -27,7 +27,7 @@
             <a href="/team" class="btn btn-primary add-team"><i class="fa fa-users" aria-hidden="true"></i>New Team</a>
         @endif
     </nav>
-    <div class="col-md-8 col-md-offset-4 members" data-spy="scroll" data-target="#teams" data-offset="200">
+    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-23 members" data-spy="scroll" data-target="#teams" data-offset="200">
 
         @foreach($teams as $team)
             <div id="{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}" class="team">

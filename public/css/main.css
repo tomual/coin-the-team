@@ -3,24 +3,24 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	line-height: 1.8em;
-	color: #9294A5;
-	background: #262830;
-	font-size: 16px;
-	padding: 0;
-	margin: 0;
-	position: relative;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8em;
+    color: #9294A5;
+    background: #262830;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
 .header {
-	height: 750px;
-	background-image: url("/img/bg.png");
+    height: 750px;
+    background-image: url("/img/bg.png");
 }
 .logo {
-	background-image: url("/img/jumbotron.png");
+    background-image: url("/img/jumbotron.png");
     background-size: 700px;
-	height: 750px;
+    height: 750px;
     background-repeat: no-repeat;
     background-position: 50%;
 }
@@ -40,11 +40,11 @@ body {
 }
 
 .header.page .nav ul li:nth-child(2) {
-	margin-right: 90px;
+    margin-right: 90px;
 }
 
 .header.page .nav ul li:nth-child(3) {
-	margin-left: 90px;
+    margin-left: 90px;
 }
 
 .header h1 {
@@ -53,152 +53,152 @@ body {
 }
 
 h1, h2, h3 {
-	font-family: 'Open Sans Condensed', sans-serif;
-	color: #FFF;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 hr {
-	opacity: 0.25;
+    opacity: 0.25;
 }
 
 img {
-	width: 100%;
+    width: 100%;
 }
 
 footer {
-	font-size: 14px;
-	font-weight: 300;
-	opacity: 0.5;
-	text-align: center;
-	padding: 50px 0;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.5;
+    text-align: center;
+    padding: 50px 0;
 }
 
 footer .fa {
-	color: #9294A5;
+    color: #9294A5;
 }
 
 .btn-primary {
-	background-color: #00AEEF;
+    background-color: #00AEEF;
 }
 
 .fa {
-	color: #00AEEF;
+    color: #00AEEF;
 }
 
 .btn .fa {
-	color: #FFF;
-	margin-right: 10px;
+    color: #FFF;
+    margin-right: 10px;
 }
 
 .input-group .fa {
-	color: #000;
+    color: #000;
 }
 
 .intro {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 .intro h2 {
-	text-align: center;
-	margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .intro p {
-	padding: 10px;
+    padding: 10px;
 }
 .intro-fa {
-	margin-bottom: 40px;
-	font-size: 36px;
-	text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    text-align: center;
 }
 
 .highlight {
-	margin: 100px 0;
+    margin: 100px 0;
 }
 
 .highlight h1 {
-	margin: 0;
-	margin-bottom: 20px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 p a {
-	color: #00AEEF;
+    color: #00AEEF;
 }
 
 .blog {
-	margin: 100px 0;
+    margin: 100px 0;
 }
 
 .nav ul li {
-	font-family: 'Open Sans Condensed', sans-serif;
-	color: #666;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 20px;
-	margin: 0 90px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0 90px;
 }
 
 .nav ul li a {
-	color: #FFF;
+    color: #FFF;
 }
 
 .nav ul {
-	list-style-type: none;
-	padding: 0;
-	padding-top: 40px;
+    list-style-type: none;
+    padding: 0;
+    padding-top: 40px;
 }
 
 .nav li {
-	display: inline;
+    display: inline;
 }
 
 .nav {
-	text-align: center;
+    text-align: center;
 }
 
 .blog h2, .highlight h2 {
-	margin: 40px 0;
+    margin: 40px 0;
 }
 
 .posts .post {
-	margin: 40px 0;
+    margin: 40px 0;
 }
 
 .posts .post .body {
-	margin: 20px 0;
+    margin: 20px 0;
 }
 
 .posts {
-	padding: 90px 0;
+    padding: 90px 0;
 }
 
 .posts .author,
 .posts .link,
 .posts .date {
-	display: inline;
+    display: inline;
 }
 
 .post img {
-	display: block;
-	margin: 40px auto;
+    display: block;
+    margin: 40px auto;
 }
 
 #new-post {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .home {
-	height: 150px;
-	width: 150px;
-	position: absolute;
-	left: 50%;
-	margin-left: -75px;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
 }
 
 .member {
-	height: 100px;
+    height: 100px;
     margin: 40px 0;
 }
 
@@ -209,18 +209,18 @@ p a {
 }
 
 .member .image img {
-	vertical-align: initial;
+    vertical-align: initial;
 }
 
 .member .member-text {
-	display: inline-block;
+    display: inline-block;
     height: 120px;
     width: 100%;
     margin-left: 120px;
 }
 
 .member .username {
-	font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     color: #FFF;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -240,23 +240,24 @@ p a {
 }
 
 #teams {
-	position: fixed;
-	margin-top: 80px;
+    position: fixed;
+    margin-top: 80px;
+    width: 300px;
 }
 
 #teams .nav {
-	text-align: right;
+    text-align: right;
 }
 
 #teams .nav-link {
-	color: #9294A5;
-	border-radius: 0;
+    color: #9294A5;
+    border-radius: 0;
     border-right: 2px solid transparent;
     display: inline-block;
 }
 
 #teams .nav-link.active {
-	color: #FFF;
+    color: #FFF;
     background-color: initial;
     border-right: 2px solid #00AEEF;
 }
@@ -266,16 +267,16 @@ p a {
 }
 
 #teams {
-	text-align: right;
+    text-align: right;
 }
 
 #teams .btn {
-	margin-top: 20px;
-	width: 160px;
+    margin-top: 20px;
+    width: 160px;
 }
 
 .new-form {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .delete-team {
@@ -313,21 +314,87 @@ p a {
 }
 
 @media screen and (max-width: 1200px) {
-	.nav ul li {
-	    margin: 0 50px;
-	}
+    .nav ul li {
+        margin: 0 50px;
+    }
+    .header.page .nav ul li {
+        margin: 0px 15px;
+    }
+}
+
+@media screen and (max-width: 993px) {
+
+    #teams {
+        position: fixed;
+        margin-top: 80px;
+        left: 20px;
+        width: 230px;
+        /* margin-right: -10px; */
+        font-size: 13px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-.nav ul li {
-    margin: 0 10px;
-    font-size: 16px;
-}
-.logo {
-    background-size: 500px;
-    height: 640px;
-}
-.header {
-    height: 600px;
-}
+
+    .nav ul li {
+    margin: 0 5px;
+        font-size: 16px;
+    }
+    .logo {
+        background-size: 500px;
+        height: 640px;
+    }
+    .header {
+        height: 600px;
+    }
+    #teams {
+        position: static;
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header.page .nav ul li {
+    margin: 0;
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+
+    .header.page .nav ul li:nth-child(2) {
+        margin: 0;
+        text-align: right;
+        margin-top: -28px;
+    }
+    
+    .header.page .nav ul li:nth-child(3) {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .header.page .nav ul li:nth-child(4) {
+        margin: 0;
+        text-align: right;
+        margin-top: -28px;
+    }
+    .nav ul {
+        width: 280px;
+        margin: auto;
+    }
+
+    .header h1 {
+        margin-top: 70px;
+    }
+    .team {
+        padding: 0 15px;
+    }
+
+    .members h2 {
+        font-size: 28px;
+        border-bottom: 1px dotted rgba(255,255,255,0.5);
+    }
+
+    .member .username {
+        font-size: 22px;
+    }
 }
