@@ -24,32 +24,34 @@
         <div class="col-md-12">
             <h2>Posts</h2>
         </div>
-        <div class="col-md-6">
-            <img src="{{ $posts[0]->image }}">
-            <!-- <img src="img/stephaniekawaii.png"> -->
-        </div>
-        <div class="col-md-6">
+
         @if($posts->count())
-            <h1>{{ $posts[0]->title }}</h1>
-            <div class="post-date">{{ $posts[0]->created_at->format('jS F Y') }}</div>
-            <p>{{ substr($posts[0]->body, 0, 250) }}...</p>
-            <a class="btn btn-primary" href="{{ $posts[0]->redirect }}" target="_blank">More Information</a>
+            <div class="col-md-6">
+                <img src="{{ $posts[0]->image }}">
+                <!-- <img src="img/stephaniekawaii.png"> -->
+            </div>
+            <div class="col-md-6">
+                <h1>{{ $posts[0]->title }}</h1>
+                <div class="post-date">{{ $posts[0]->created_at->format('jS F Y') }}</div>
+                <p>{{ substr($posts[0]->body, 0, 250) }}...</p>
+                <a class="btn btn-primary" href="{{ $posts[0]->redirect }}" target="_blank">More Information</a>
+            </div>
         @endif
-        </div>
     </div>
 
-    <div class="row blog">
-        @for ($i = 1; $i <= 3; $i++)
-        <div class="col-md-4 post-preview">
-            @if($posts->count() > $i)
-            <!-- <img src="http://dhost1.mmomiss.com/uploads/201509/4eec6099c0beb9063c13be929ea4114a.jpg"> -->
-            <img src="{{ $posts[$i]->image }}">
-            <h2>{{ $posts[$i]->title }}</h2>
-            <div class="post-date">{{ $posts[$i]->created_at->format('jS F Y') }}</div>
-            <p>{{ substr($posts[$i]->body, 0, 120) }}... <br /><a href="{{ $posts[$i]->redirect }}" target="_blank">More Information</a></p>
-            @endif
+    @if($posts->count())
+        <div class="row blog">
+            @for ($i = 1; $i <= 3; $i++)
+                <div class="col-md-4 post-preview">
+                    @if($posts->count() > $i)
+                        <!-- <img src="http://dhost1.mmomiss.com/uploads/201509/4eec6099c0beb9063c13be929ea4114a.jpg"> -->
+                        <img src="{{ $posts[$i]->image }}">
+                        <h2>{{ $posts[$i]->title }}</h2>
+                        <div class="post-date">{{ $posts[$i]->created_at->format('jS F Y') }}</div>
+                        <p>{{ substr($posts[$i]->body, 0, 120) }}... <br /><a href="{{ $posts[$i]->redirect }}" target="_blank">More Information</a></p>
+                    @endif
+                </div>
+            @endfor
         </div>
-        @endfor
-    </div>
-
+    @endif
 @stop
