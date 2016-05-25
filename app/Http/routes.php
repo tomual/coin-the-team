@@ -11,6 +11,8 @@ Route::auth();
 Route::get('post','PostController@index');
 Route::get('posts', 'PostController@posts');
 Route::post('post', 'PostController@create');
+Route::get('/post/edit/{post}', 'PostController@edit');
+Route::post('/post/update/{post}', 'PostController@update');
 Route::get('/post/{post}', 'PostController@view');
 Route::delete('/post/{post}', 'PostController@delete');
 

@@ -63,6 +63,11 @@ class PostController extends Controller
         return redirect('posts');
 	}
 
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
     public function delete(Post $post)
     {
         $post->delete();
