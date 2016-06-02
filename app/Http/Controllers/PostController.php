@@ -68,6 +68,18 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
+    public function update(Post $post, Request $request)
+    {
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->redirect = $request->redirect;
+        $post->image = $request->image;
+
+        $post->save();
+
+        return redirect('posts');
+    }
+
     public function delete(Post $post)
     {
         $post->delete();
