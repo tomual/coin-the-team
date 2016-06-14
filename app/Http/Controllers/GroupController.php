@@ -42,4 +42,9 @@ class GroupController extends Controller
         $group->delete();
         return redirect('teams');
     }
+
+    public function setOrder(Request $request)
+    {
+        # code...
+    }
 }
