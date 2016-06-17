@@ -287,7 +287,8 @@ p a {
 }
 
 .delete-team .fa,
-.delete-member .fa {
+.delete-member .fa,
+.move-member .fa {
     color: #9294A5;
     opacity: 0.5;
 }
@@ -302,13 +303,18 @@ p a {
     display: inline;
 }
 
-.delete-member {
+.delete-member,
+.move-member {
     margin-left: 5px;
     background: none;
     border: none;
-    padding: 0;
+    padding: 0 2px;
 }
 
+.move-member .fa:hover {
+    opacity: 1;
+    color: #00AEEF;
+}
 .member form {
     display: inline;
 }
