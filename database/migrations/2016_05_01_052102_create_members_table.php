@@ -17,12 +17,12 @@ class CreateMembersTable extends Migration
             $table->string('username');
             $table->string('position');
             $table->date('joined');
-            $table->integer('group_id')->unsigned()->default(1);
+            $table->integer('group_id')->unsigned()->nullable();
             $table->string('image');
             $table->timestamps();
         });
         Schema::table('members', function ($table) {
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('set null');
         });
     }
 

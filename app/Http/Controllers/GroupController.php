@@ -21,7 +21,7 @@ class GroupController extends Controller
 
     public function create(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -32,6 +32,15 @@ class GroupController extends Controller
 
         $team = new Group;
         $team->name = $request->name;
+        $team->slug = strtolower(preg_replace('/[^A-Za-z0-9]/', '', $request->name));
+
+        if(!empty(DB::table('groups')->where('slug', $team->slug)->first()))
+        {
+            return redirect('/team')
+                ->withInput()
+                ->withErrors(array('message' => 'Team name is too similar to an existing team.'));
+        }
+
         $team->save();
 
         return redirect('teams');

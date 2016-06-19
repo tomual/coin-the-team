@@ -18,7 +18,7 @@
                         <button type="submit" class="delete-team"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </form>
                 @endif
-                <a class="nav-link" href="#{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}">{{ $team->name }}</a>
+                <a class="nav-link" href="#{{ $team->slug }}">{{ $team->name }}</a>
                 </li>
             @endforeach
         </ul>
@@ -48,7 +48,7 @@
                                         <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
                                         <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
                                     </form>
-                                    <button class="move-member"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                                    <button class="move-member" data-team="{{ $team->slug }}" data-id="{{ $team->id }}"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
                                     <button class="move-member"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                 @endif
                             </div>
@@ -71,7 +71,10 @@
                 $('.nav-item:first-child > .nav-link').addClass('active');
             }
         });
-
-
+        var ordering = {
+            @foreach($teams as $team)
+                {{ $team->slug }} : "{{ $team->order }}",
+            @endforeach
+        };
     </script>
 @stop
