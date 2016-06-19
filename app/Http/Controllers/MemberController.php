@@ -59,13 +59,17 @@ class MemberController extends Controller
             $request->image = 'http://news.cdn.leagueoflegends.com/public/images/articles/2015/march_2015/upn/ghost.jpg';
         }
 
-        $task = new Member;
-        $task->username = $request->username;
-        $task->position = $request->position;
-        $task->group_id = $request->group_id;
-        $task->joined = date("Y-m-d H:i:s", strtotime($request->joined));
-        $task->image = $request->image;
-        $task->save();
+        $member = new Member;
+        $member->username = $request->username;
+        $member->position = $request->position;
+        $member->group_id = $request->group_id;
+        $member->joined = date("Y-m-d H:i:s", strtotime($request->joined));
+        $member->image = $request->image;
+        $member->save();
+
+        $group = Group::find($request->group_id);
+        $group->order = $group->order . $member->id . ",";
+        $group->save();
 
         return redirect('teams');
 	}
