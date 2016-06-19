@@ -13,7 +13,7 @@ class AddMemberOrdering extends Migration
     public function up()
     {
         Schema::table('groups', function ($table) {
-            $table->string('ordering');
+            $table->string('order');
         });   
     }
 
@@ -25,7 +25,7 @@ class AddMemberOrdering extends Migration
     public function down()
     {
         Schema::table('groups', function ($table) {
-            $table->dropColumn('ordering');
+            $table->dropColumn('order');
         });
     }
 }

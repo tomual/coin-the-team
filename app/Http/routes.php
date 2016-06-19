@@ -27,7 +27,7 @@ Route::delete('/member/{member}', 'MemberController@delete');
 // Teams
 Route::get('team','GroupController@index');
 Route::post('team', 'GroupController@create');
-Route::post('order', 'GroupController@setOrder');
+Route::post('/order/{group}', 'GroupController@setOrder');
 Route::delete('/team/{group}', 'GroupController@delete');
 
 //Apparel

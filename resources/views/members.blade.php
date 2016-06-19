@@ -32,28 +32,29 @@
         @foreach($teams as $team)
             <div id="{{ strtolower(preg_replace('/[^A-Za-z0-9]/', '', $team->name)) }}" class="team">
             <h2>{{ $team->name }}</h2>
-            @foreach($members as $member)
-                @if($member->group_id == $team->id)
-                    <div class="member">
-                        <div class="image"><img src="{{ $member->image }}"></div>
-                        <div class="member-text">
-                            <div class="username">{{ $member->username }}</div>
-                            <div class="position">{{ $member->position }}</div>
-                            <div class="joined">Joined {{ date("M Y", strtotime($member->joined)) }}</div>
-
-                            @if( Auth::check() )
-                                <form action="{{ url('member/' . $member->id) }}" method="POST">
-                                    {!! csrf_field() !!}
-                                    {!! method_field('DELETE') !!}
-                                    <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
-                                    <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
-                                </form>
-                                <button class="move-member"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
-                                <button class="move-member"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            @endif
+            @foreach(explode(",", $team->order) as $id)
+                @foreach($members as $member)
+                    @if($member->id == $id)
+                        <div class="member">
+                            <div class="image"><img src="{{ $member->image }}"></div>
+                            <div class="member-text">
+                                <div class="username">{{ $member->username }}</div>
+                                <div class="position">{{ $member->position }}</div>
+                                <div class="joined">Joined {{ date("M Y", strtotime($member->joined)) }}</div>
+                                @if( Auth::check() )
+                                    <form action="{{ url('member/' . $member->id) }}" method="POST">
+                                        {!! csrf_field() !!}
+                                        {!! method_field('DELETE') !!}
+                                        <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
+                                        <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                    </form>
+                                    <button class="move-member"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                                    <button class="move-member"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
+                @endforeach
             @endforeach
             </div>
         @endforeach
@@ -70,5 +71,7 @@
                 $('.nav-item:first-child > .nav-link').addClass('active');
             }
         });
+
+
     </script>
 @stop

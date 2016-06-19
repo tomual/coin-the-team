@@ -43,8 +43,8 @@ class GroupController extends Controller
         return redirect('teams');
     }
 
-    public function setOrder(Request $request)
+    public function setOrder(Group $group, Request $request)
     {
-        # code...
+        dd($request);
     }
 }
