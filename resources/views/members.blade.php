@@ -35,7 +35,7 @@
             @foreach(explode(",", $team->order) as $id)
                 @foreach($members as $member)
                     @if($member->id == $id)
-                        <div class="member">
+                        <div class="member" data-team="{{ $team->slug }}" data-id="{{ $member->id }}">
                             <div class="image"><img src="{{ $member->image }}"></div>
                             <div class="member-text">
                                 <div class="username">{{ $member->username }}</div>
@@ -48,8 +48,8 @@
                                         <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
                                         <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
                                     </form>
-                                    <button class="move-member" data-team="{{ $team->slug }}" data-id="{{ $team->id }}"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
-                                    <button class="move-member"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <button class="move-member up"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                                    <button class="move-member down"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                 @endif
                             </div>
                         </div>
@@ -60,6 +60,7 @@
         @endforeach
     </div>
 </div>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @stop
 
 @section('script')
@@ -76,5 +77,51 @@
                 {{ $team->slug }} : "{{ $team->order }}",
             @endforeach
         };
+
+        $('.move-member').on( 'click', function() {
+            console.log( $(this).parent().parent() );
+            $member = $(this).parent().parent();
+            if($(this).hasClass('up'))
+            {
+                if(!$member.prev().is('h2'))
+                {
+                    $member.prev().before($member);
+                    saveOrder($member.data('team'));
+                }
+            }
+            else
+            {
+                if( $member.next().is('div') )
+                {
+                    $member.next().after($member);
+                    saveOrder($member.data('team'));
+                }
+            }
+            // if( $(this).hasClass('up'))
+            // {
+
+            // }
+        });
+
+        function saveOrder(team)
+        {
+            var csrf = $('meta[name="csrf-token"]').attr('content');
+            console.log( team );
+            members = $('[data-team="staff"]');
+            ordering = '';
+            $.each(members, function( i, member ) {
+                console.log( member );
+                ordering += $( member ).data('id') + ",";
+            });
+            data = {};
+            data[team] = ordering;
+            data['_token'] = csrf;
+            console.log(data);
+            $.post( "/team/order", data)
+            .done(function( result ) {
+                console.log( result );
+            });
+
+        }
     </script>
 @stop
