@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use DB;
 use Illuminate\Http\Request;
 use Validator;
 use App\Group;
@@ -54,6 +56,13 @@ class GroupController extends Controller
 
     public function setOrder(Request $request)
     {
-        echo json_encode($request->getContent());
+        $array = array();
+        parse_str($request->getContent(), $array);
+        unset($array['_token']);
+        reset($array);
+        $name = key($array);
+        $group = Group::where('slug', $name)->first();
+        $group->order = $array[$name];
+        dd($group);
     }
 }
