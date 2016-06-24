@@ -74,6 +74,24 @@ class MemberController extends Controller
         return redirect('teams');
 	}
 
+    public function edit(Member $member)
+    {
+        return view('members.edit', compact('member'));
+    }
+
+    public function update(Member $member, Request $request)
+    {
+        $member->username = $request->username;
+        $member->position = $request->position;
+        $member->group_id = $request->group_id;
+        $member->joined = date("Y-m-d H:i:s", strtotime($request->joined));
+        $member->image = $request->image;
+
+        $member->save();
+
+        return redirect('members');
+    }
+
     public function delete(Member $member)
     {
         $member->delete();
