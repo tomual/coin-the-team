@@ -63,6 +63,6 @@ class GroupController extends Controller
         $name = key($array);
         $group = Group::where('slug', $name)->first();
         $group->order = $array[$name];
-        dd($group);
+        $group->save();
     }
 }

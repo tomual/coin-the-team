@@ -42,14 +42,15 @@
                                 <div class="position">{{ $member->position }}</div>
                                 <div class="joined">Joined {{ date("M Y", strtotime($member->joined)) }}</div>
                                 @if( Auth::check() )
+                                    <a href="" class="edit-member"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <button class="move-member up"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                                    <button class="move-member down"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                     <form action="{{ url('member/' . $member->id) }}" method="POST">
                                         {!! csrf_field() !!}
                                         {!! method_field('DELETE') !!}
                                         <!-- <a href="/member/edit/{{ $member->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
                                         <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
                                     </form>
-                                    <button class="move-member up"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
-                                    <button class="move-member down"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                 @endif
                             </div>
                         </div>

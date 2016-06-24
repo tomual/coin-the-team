@@ -18,11 +18,11 @@
                 <div class="date">{{ $post->created_at->format('jS M Y h:ma')  }}</div> - 
                 <div class="link"><a href="{{ $post->redirect }}">Link</a></div>
                 <div class="body">{{ $post->body }}</div>
-                @if( Auth::check() )            
+                @if( Auth::check() )
                 <form action="{{ url('post/' . $post->id) }}" method="POST">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
-                    <!-- <a href="/post/edit/{{ $post->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
+                    <a href="/post/edit/{{ $post->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>
                 </form>
                 @endif

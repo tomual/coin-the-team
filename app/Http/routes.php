@@ -21,6 +21,8 @@ Route::get('member','MemberController@index');
 Route::get('nate','MemberController@nate');
 Route::get('teams', 'MemberController@members');
 Route::post('member', 'MemberController@create');
+Route::get('/member/edit/{member}', 'MemberController@edit');
+Route::post('/member/edit/{member}', 'MemberController@update');
 Route::get('/member/{member}', 'MemberController@view');
 Route::delete('/member/{member}', 'MemberController@delete');
 
