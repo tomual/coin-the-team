@@ -76,7 +76,8 @@ class MemberController extends Controller
 
     public function edit(Member $member)
     {
-        return view('members.edit', compact('member'));
+        $teams = Group::all();
+        return view('members.edit', compact('member', 'teams'));
     }
 
     public function update(Member $member, Request $request)
@@ -89,7 +90,7 @@ class MemberController extends Controller
 
         $member->save();
 
-        return redirect('members');
+        return redirect('teams');
     }
 
     public function delete(Member $member)
