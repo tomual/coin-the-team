@@ -15,7 +15,7 @@
                         {!! csrf_field() !!}
                         {!! method_field('DELETE') !!}
                         <!-- <a href="/team/edit/{{ $team->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> -->
-                        <button type="submit" class="delete-team"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <button type="submit" class="delete-team" onclick="return confirm('Delete group {{ $team->name }} and its members?')"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </form>
                 @endif
                 <a class="nav-link" href="#{{ $team->slug }}">{{ $team->name }}</a>
@@ -48,7 +48,7 @@
                                     <form action="{{ url('member/' . $member->id) }}" method="POST">
                                         {!! csrf_field() !!}
                                         {!! method_field('DELETE') !!}
-                                        <button type="submit" class="delete-member"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                        <button type="submit" class="delete-member" onclick="return confirm('Delete member {{ $member->username }}?')"><i class="fa fa-times" aria-hidden="true"></i></button>
                                     </form>
                                 @endif
                             </div>

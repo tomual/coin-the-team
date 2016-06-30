@@ -23,7 +23,7 @@
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
                     <a href="/post/edit/{{ $post->id }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?')"><i class="fa fa-trash"></i>Delete</button>
                 </form>
                 @endif
             </div>
