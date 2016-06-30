@@ -82,6 +82,17 @@ class MemberController extends Controller
 
     public function update(Member $member, Request $request)
     {
+        if( $member->group_id != $request->group_id)
+        {
+            $from = Group::find($member->group_id);
+            $to = Group::find($request->group_id);
+
+            $from->order = str_replace( $member->id . ',', '', $from->order );
+            $to->order = $to->order . $member->id . ',';
+
+            $from->save();
+            $to->save();
+        }
         $member->username = $request->username;
         $member->position = $request->position;
         $member->group_id = $request->group_id;
