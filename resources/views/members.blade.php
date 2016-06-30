@@ -79,7 +79,6 @@
         };
 
         $('.move-member').on( 'click', function() {
-            console.log( $(this).parent().parent() );
             $member = $(this).parent().parent();
             if($(this).hasClass('up'))
             {
@@ -106,20 +105,16 @@
         function saveOrder(team)
         {
             var csrf = $('meta[name="csrf-token"]').attr('content');
-            console.log( team );
-            members = $('[data-team="staff"]');
+            members = $('[data-team="' + team + '"]');
             ordering = '';
             $.each(members, function( i, member ) {
-                console.log( member );
                 ordering += $( member ).data('id') + ",";
             });
             data = {};
             data[team] = ordering;
             data['_token'] = csrf;
-            console.log(data);
             $.post( "/team/order", data)
             .done(function( result ) {
-                console.log( result );
             });
 
         }
