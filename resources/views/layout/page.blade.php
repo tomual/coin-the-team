@@ -41,7 +41,13 @@
     <div class="container">
         <hr>
         <footer>
-            <p>&copy; Damage Per Second Gaming 2016 <a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i></a></p>
+            <p>&copy; Damage Per Second Gaming 2016 
+                @if( Auth::check() )
+                    <a href="/logout">Log Out</a>
+                @else
+                    <a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                @endif
+            </p>
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

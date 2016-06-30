@@ -319,6 +319,17 @@ p a {
     display: inline;
 }
 
+.form-login,
+.form-register {
+    margin: 70px 0;
+}
+
+
+.form-login .form-group > div,
+.form-register .form-group > div {
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1200px) {
     .nav ul li {
         margin: 0 50px;
