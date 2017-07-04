@@ -5,9 +5,8 @@ This is a website for a gaming team. It is written in PHP using Laravel.
 
 ## Features
 
-* Home page shows latest blog posts
+* Blog posts, displayed on home page
 * Easily editable teams & members page
-* Contact form
 
 ## Installation
 
@@ -22,5 +21,7 @@ This is a website for a gaming team. It is written in PHP using Laravel.
   $user->email = 'admin@test.com';
   $user->save();
   ```
+  
+Go to /posts/ to view/create posts for the home page
 
 Site was customized for a specific person, so some manual configuration is required (image URLs, home page text)
